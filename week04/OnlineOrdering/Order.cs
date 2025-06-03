@@ -41,13 +41,16 @@ class Order
     public void TotalPrice()
     {
         double productPrice = _products[0].GetProductPrice();
-        double total = productPrice;
+        double productPrice2 = _products[1].GetProductPrice();
+        double productQuantity = _products[0].GetProductQuantity();
+        double productQuantity2 = _products[1].GetProductQuantity();
+        double total = productPrice + productPrice2 * productQuantity * productQuantity2;
 
         int ship = GetShippingCost();
 
         double totalPrice = total + ship;
 
-        Console.WriteLine("Total price: " + totalPrice);
+        Console.WriteLine("Total price: $" + totalPrice.ToString("F2"));
 
     }
 
